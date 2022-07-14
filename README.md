@@ -8,9 +8,19 @@ This repository contains the software [VRC](https://www.vexrobotics.com/v5/compe
 
 We used 2 tracking wheels, to measure distance, and 1 inertial measurement unit (IMU), to measure rotation. The sensor inputs give feedback that can be used to calculate the robot's position during autonomous. This tracking algorithm allows us to have incredibly accurate movements that can dynamically adapt to outside influence. 
 
+See more regarding odometry [here](http://thepilons.ca/wp-content/uploads/2018/10/Tracking.pdf) (*Introduction to Position Tracking*, VRC Team 5225A)
+
 * [`/src/drive/visiontt.cpp`](src/drive/visiontt.cpp) - Computer vision used for accurate turns
 
+As powerful as odometry may seem, it is still good practice to maneuver the robot relative to field elements. With the help of computer vision, we can accurately turn towards target field elements without completely relying on our tracking wheel odometry. The turn algorithm uses PID for even more accurate movements. 
 
+PID essentially works by taking a mechanism's current state and comparing the state to the desired state. For example, with a drivetrain, the current location might be (0, 0) and the target location might be (5, 0). PID then computes the desired power the motors need to be at. 
+
+![PID diagram](https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Pid-feedback-nct-int-correct.png/1200px-Pid-feedback-nct-int-correct.png)
+
+* [`/src/drive/drive.cpp`](src/drive/drive.cpp) - Computer vision used for accurate turns
+
+In VEX, the traditional approach to movement consists of point turns and lateral movement. While it may be simple, the approach is quite slow as you need to wait for PID to slow down in both turns and lateral movements. Thus, we created a custom algorithm that combines turns and lateral movements into smooth curves. Instead of turning and moving, the chassis moves in a smooth arc to get to its desired location. We attempted to achieve this result by combining the turn and lateral movement PID. Our implementation can be found in line 151 at the function ``moveToCurve``. 
 
 ## Usage
 
