@@ -22,6 +22,14 @@ PID essentially works by taking a mechanism's current state and comparing the st
 
 In VEX, the traditional approach to movement consists of point turns and lateral movement. While it may be simple, the approach is quite slow as you need to wait for PID to slow down in both turns and lateral movements. Thus, we created a custom algorithm that combines turns and lateral movements into smooth curves. Instead of turning and moving, the chassis moves in a smooth arc to get to its desired location. We attempted to achieve this result by combining the turn and lateral movement PID. Our implementation can be found in line 151 at the function ``moveToCurve``. 
 
+* [`/src/rollers_intakes.cpp`](src/rollers_intakes.cpp) - Automatic color detection index system
+
+A key element of Change Up is being able to index the right colored ball as fast as possible. We achieved this by using color sensors placed around the robot to provide feedback as to where and what color the ball(s) are. Then, we dynamically change the movement of the rollers to remove opponent balls from our robot and/or index our alliance's balls. Our implementation of this algorithm can be found on line 27 in the function ``autoIndex``. 
+
+* [`/src/screen`](src/screen) - Screen experiments
+
+We experimented with the v5 Brain's screen with mini-projects such as creating a [Pong](https://www.ponggame.org/) game. The screen was especially useful in applications like our auton selector, making selecting autons much easier. 
+
 ## Usage
 
 1. Install VEXCode Pro [here](https://www.vexrobotics.com/vexcode/pro-v5)
