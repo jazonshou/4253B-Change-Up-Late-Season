@@ -16,6 +16,7 @@ We used 2 tracking wheels, to measure distance, and 1 inertial measurement unit 
 
 1. Install VEXCode Pro [here](https://www.vexrobotics.com/vexcode/pro-v5)
 2. Download code: 
+
 | Git Installed | No Git Installed |
 |---|---|
 | Run ``git clone https://github.com/Yessir120/4253B-Change-Up-Late-Season.git`` in your terminal | Click the green ``Code`` button and select ``Download ZIP`` |
