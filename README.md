@@ -30,7 +30,7 @@ A key element of Change Up is being able to index the right colored ball as fast
 
 We experimented with the v5 Brain's screen with mini-projects such as creating a [Pong](https://www.ponggame.org/) game. The screen was especially useful in applications like our auton selector, making selecting autons much easier. 
 
-## Usage
+## Installation
 
 1. Install VEXCode Pro [here](https://www.vexrobotics.com/vexcode/pro-v5)
 2. Download code: 
@@ -38,7 +38,8 @@ We experimented with the v5 Brain's screen with mini-projects such as creating a
 | Git Installed | No Git Installed |
 |---|---|
 | Run ``git clone https://github.com/Yessir120/4253B-Change-Up-Late-Season.git`` in your terminal | Click the green ``Code`` button and select ``Download ZIP`` |
-3. Enjoy!
+3. Compile & download to v5 Brain
+4. Enjoy!
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
